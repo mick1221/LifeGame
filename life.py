@@ -31,11 +31,33 @@ def random_state(width,height):
     
     return life_space
 
+def print_life(life_space):
+    length = len(life_space)
+    string = ""
+    for i in range(length+2):
+        string = string + "-"
+    print(string)
+
+    for i in life_space:
+        line = "|"
+        for j in i:
+            if j == 1:
+                line = line + "#"
+            else:
+                line = line + " "
+        line = line + "|"
+        print(line)
+    
+    print(string)
+
 
 
 
 width = 4
 height = 5
 
-print(dead_state(width,height))
-print(random_state(width,height))
+test = dead_state(width,height)
+test2 = random_state(width,height)
+
+print_life(test)
+print_life(test2)
